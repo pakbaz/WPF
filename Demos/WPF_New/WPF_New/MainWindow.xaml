@@ -1,0 +1,65 @@
+﻿<Window x:Class="WPF_New.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_New"
+        xmlns:pages="clr-namespace:WPF_New.Pages"
+        xmlns:uc="clr-namespace:WPF_New.Controls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <TabControl>
+        <TabControl.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="Foreground" Value="Red"></Setter>
+                <Setter Property="FontSize" Value="40"></Setter>
+            </Style>
+        </TabControl.Resources>
+        <TabItem Header="Datagrid">
+            <Frame>
+                <Frame.Content>
+                    <pages:Datagridpage />
+                </Frame.Content>
+            </Frame>
+        </TabItem>
+        <TabItem Header="DataTrigger">
+            <Frame>
+                <Frame.Content>
+                    <pages:Triggers />
+                </Frame.Content>
+            </Frame>
+        </TabItem>
+        <TabItem Header="3D Animation">
+            <Frame>
+                <Frame.Content>
+                    <pages:Wpf3dpage />
+                </Frame.Content>
+            </Frame>
+        </TabItem>
+        <TabItem Header="Multi Trigger">
+            <uc:MultiTrigger />
+        </TabItem>
+        <TabItem Header="User Control">
+            <uc:CustomUserControl />
+        </TabItem>
+        <TabItem Header="Simple Binding">
+            <uc:SimpleBinding />
+        </TabItem>
+        <TabItem Header="Story Board">
+            <uc:StoryBoard />
+        </TabItem>
+        <TabItem Header="Custom Control">
+            <StackPanel>
+                <TextBlock x:Name="txtColor" />
+                <uc:CustomControlDemo  ColorChanged="CustomControlDemo_ColorChanged"/>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="Monkeys">
+            <uc:MonkeysUserControl />
+        </TabItem>
+        <TabItem Header="Simple Style" >
+            <uc:BasicStyling />
+        </TabItem>
+    </TabControl>
+
+</Window>
